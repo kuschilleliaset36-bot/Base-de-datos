@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href=imagenes/sql.png>
+</head>
+
+<body>
+    <header class="menu">
+        <a class="logo" href="#inicio">
+            <img src="IMAGENES/sql.png" alt="" class="img-logo">
+        </a>
+
+        <nav>
+            <a href="#historia">HISTORIA</a>
+            <a href="#guia">GUÍA Y CONCEPTOS</a>
+            <a href="#consultas">CONSULTAS</a>
+            <a href="#instalacion">INSTALACIÓN</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-contenido">
+                <h1>SQL</h1>
+                <p>Aprende a gestionar y consultar bases de datos relacionales</p>
+            </div>
+        </section>
+
+        <section id="historia" class="seccion seccion-clara">
+            <div class="contenedor bloque-dos-columnas">
+                <div class="texto">
+                    <span class="numero">01</span>
+                    <h2>HISTORIA Y ORIGEN DE SQL</h2>
+
+                    <p>
+                        SQL (<strong>Structured Query Language</strong> o Lenguaje de Consulta Estructurado) nació a principios de los años 70 en los laboratorios de investigación de <strong>IBM</strong> en San José, California.
+                    </p>
+
+                    <p>
+                        Se basó en el modelo relacional propuesto por <strong>Edgar F. Codd</strong> en 1970. Basándose en este modelo, los investigadores <strong>Donald D. Chamberlin</strong> y <strong>Raymond F. Boyce</strong> desarrollaron el lenguaje original llamado <strong>SEQUEL</strong> (Structured English Query Language) para manipular y recuperar datos almacenados en el sistema experimental de IBM llamado <em>System R</em>.
+                    </p>
+
+                    <p>
+                        Debido a un problema de marcas registradas con una empresa de aviación, el nombre se acortó a <strong>SQL</strong>.
+                    </p>
+
+                    <p>
+                        En 1986, el American National Standards Institute (<strong>ANSI</strong>) estandarizó el lenguaje SQL, seguido por la ISO en 1987. Desde entonces, SQL se ha convertido en el estándar universal para interactuar con Sistemas de Gestión de Bases de Datos Relacionales (RDBMS) como MySQL, PostgreSQL, Oracle, SQL Server y SQLite.
+                    </p>
+                </div>
+
+                <div class="imagen">
+                    <img src="IMAGENES/historia.jpeg" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section id="guia" class="seccion seccion-gris">
+            <div class="contenedor bloque-dos-columnas">
+                <div class="imagen">
+                    <img src="IMAGENES/guia.jpg" alt="Estructura de Base de Datos">
+                </div>
+
+                <div class="texto">
+                    <span class="numero">02</span>
+                    <h2>CONCEPTOS CLAVE DE UNA BASE DE DATOS</h2>
+
+                    <p>
+                        Una base de datos relacional organiza la información en estructuras llamadas <strong>Tablas</strong>, las cuales se componen de <strong>Campos</strong> y <strong>Registros</strong>. Puedes imaginarlo como una planilla de cálculo interactiva.
+                    </p>
+
+                    <h3>1. Tablas</h3>
+                    <p>Es una colección de datos organizados en filas y columnas. Por ejemplo, una tabla llamada <code>usuarios</code> o <code>productos</code>.</p>
+
+                    <h3>2. Campos (Columnas)</h3>
+                    <p>Definen el tipo de información que guardará la tabla. Cada campo tiene un nombre único y un tipo de dato especificado (por ejemplo: texto, número entero, fecha).</p>
+
+                    <h3>3. Registros (Filas)</h3>
+                    <p>Es cada una de las entradas de datos individuales almacenadas en la tabla. Cada fila contiene los valores correspondientes a cada columna.</p>
+
+                    <div class="ejemplo-tabla-caja">
+                        <h4>Ejemplo práctico: Tabla "usuarios"</h4>
+                        <table class="tabla-ejemplo">
+                            <thead>
+                                <tr>
+                                    <th>id (Campo)</th>
+                                    <th>nombre (Campo)</th>
+                                    <th>email (Campo)</th>
+                                    <th>edad (Campo)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Ana Gómez</td>
+                                    <td>ana@mail.com</td>
+                                    <td>28</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Carlos Pérez</td>
+                                    <td>carlos@mail.com</td>
+                                    <td>34</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="nota-tabla"><em>Nota: La tabla tiene 4 campos (columnas) y 2 registros (filas).</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="consultas" class="seccion seccion-clara">
+            <div class="contenedor">
+                <span class="numero">03</span>
+                <h2>EJEMPLOS DE CONSULTAS SQL EXPLICADAS</h2>
+                <p class="subtitulo-seccion">Las consultas son las sentencias que le enviamos a la base de datos para leer o modificar información.</p>
+
+                <div class="grid-consultas">
+
+                    <div class="codigo-bloque">
+                        <h3>1. Seleccionar datos — SELECT</h3>
+                        <p>Sirve para consultar registros. Especificas qué columnas quieres ver y de qué tabla extraerte los datos.</p>
+                        <div class="codigo">
+                            <pre><code>SELECT id, nombre, email
+FROM usuarios;</code></pre>
+                            <button class="copiar" data-copy="SELECT id, nombre, email&#10;FROM usuarios;">Copiar</button>
+                        </div>
+                    </div>
+
+                    <div class="codigo-bloque">
+                        <h3>2. Filtrar información — WHERE</h3>
+                        <p>Filtra los resultados devolviendo únicamente los registros que cumplen una condición lógica específica.</p>
+                        <div class="codigo">
+                            <pre><code>SELECT *
+FROM productos
+WHERE precio > 10000;</code></pre>
+                            <button class="copiar" data-copy="SELECT *&#10;FROM productos&#10;WHERE precio > 10000;">Copiar</button>
+                        </div>
+                    </div>
+
+                    <div class="codigo-bloque">
+                        <h3>3. Ordenar resultados — ORDER BY</h3>
+                        <p>Ordena los registros devueltos de forma ascendente (<code>ASC</code>) o descendente (<code>DESC</code>) según una columna.</p>
+                        <div class="codigo">
+                            <pre><code>SELECT modelo, precio
+FROM autos
+ORDER BY precio DESC;</code></pre>
+                            <button class="copiar" data-copy="SELECT modelo, precio&#10;FROM autos&#10;ORDER BY precio DESC;">Copiar</button>
+                        </div>
+                    </div>
+
+                    <div class="codigo-bloque">
+                        <h3>4. Agrupar datos — GROUP BY</h3>
+                        <p>Agrupa filas que tienen los mismos valores en columnas especificadas. Se suele combinar con funciones como <code>COUNT()</code> o <code>SUM()</code>.</p>
+                        <div class="codigo">
+                            <pre><code>SELECT marca, COUNT(*) AS total
+FROM autos
+GROUP BY marca;</code></pre>
+                            <button class="copiar" data-copy="SELECT marca, COUNT(*) AS total&#10;FROM autos&#10;GROUP BY marca;">Copiar</button>
+                        </div>
+                    </div>
+
+                    <div class="codigo-bloque">
+                        <h3>5. Combinar tablas — INNER JOIN</h3>
+                        <p>Une filas de dos o más tablas basándose en una columna común que existe en ambas (clave foránea).</p>
+                        <div class="codigo">
+                            <pre><code>SELECT usuarios.nombre, pedidos.producto
+FROM usuarios
+INNER JOIN pedidos ON usuarios.id = pedidos.usuario_id;</code></pre>
+                            <button class="copiar" data-copy="SELECT usuarios.nombre, pedidos.producto&#10;FROM usuarios&#10;INNER JOIN pedidos ON usuarios.id = pedidos.usuario_id;">Copiar</button>
+                        </div>
+                    </div>
+
+                    <div class="codigo-bloque">
+                        <h3>6. Insertar nuevos datos — INSERT INTO</h3>
+                        <p>Agrega un nuevo registro o fila dentro de una tabla especificando sus campos y valores correspondientes.</p>
+                        <div class="codigo">
+                            <pre><code>INSERT INTO usuarios (nombre, email)
+VALUES ('Juan', 'juan@email.com');</code></pre>
+                            <button class="copiar" data-copy="INSERT INTO usuarios (nombre, email)&#10;VALUES ('Juan', 'juan@email.com');">Copiar</button>
+                        </div>
+                    </div>
+
+                    <div class="codigo-bloque">
+                        <h3>7. Modificar datos — UPDATE</h3>
+                        <p>Actualiza valores de campos existentes. ¡Atención! Siempre utiliza <code>WHERE</code> para no modificar toda la tabla.</p>
+                        <div class="codigo">
+                            <pre><code>UPDATE usuarios
+SET email = 'nuevo@email.com'
+WHERE id = 1;</code></pre>
+                            <button class="copiar" data-copy="UPDATE usuarios&#10;SET email = 'nuevo@email.com'&#10;WHERE id = 1;">Copiar</button>
+                        </div>
+                    </div>
+
+                    <div class="codigo-bloque">
+                        <h3>8. Eliminar datos — DELETE</h3>
+                        <p>Elimina uno o varios registros específicos según la condición del filtro <code>WHERE</code>.</p>
+                        <div class="codigo">
+                            <pre><code>DELETE FROM usuarios
+WHERE id = 1;</code></pre>
+                            <button class="copiar" data-copy="DELETE FROM usuarios&#10;WHERE id = 1;">Copiar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section id="instalacion" class="seccion seccion-gris">
+            <div class="contenedor bloque-dos-columnas">
+
+                <div class="imagen">
+                    <img src="IMAGENES/mysql.png" alt="Servidores y MySQL Workbench">
+                    <img src="IMAGENES/instalacion.jpg" alt="Servidores y MySQL Workbench">
+                </div>
+
+                <div class="texto">
+                    <span class="numero">04</span>
+                    <h2>GUÍA DE INSTALACIÓN: XAMPP Y MYSQL WORKBENCH</h2>
+
+                    <p>
+                        Para trabajar en tu propia computadora necesitas dos cosas: un **Servidor de Base de Datos** (donde se guardan los datos) y una **Interfaz Gráfica** (para escribir comandos de forma cómoda).
+                    </p>
+
+                    <h3>Paso 1: Instalar XAMPP (Servidor Local)</h3>
+                    <ol class="pasos-guia">
+                        <li>Ingresa a <a href="https://www.apachefriends.org/" target="_blank">apachefriends.org</a> y descarga el instalador de XAMPP para tu sistema operativo.</li>
+                        <li>Ejecuta el instalador dejando las opciones por defecto y completa la instalación.</li>
+                        <li>Abre el <strong>XAMPP Control Panel</strong>.</li>
+                        <li>Haz clic en el botón <strong>Start</strong> junto al módulo <strong>MySQL</strong>. Al ponerse en verde, el servidor estará activo en tu máquina local.</li>
+                    </ol>
+
+                    <h3>Paso 2: Instalar y Configurar MySQL Workbench</h3>
+                    <ol class="pasos-guia">
+                        <li>Ingresa a <a href="https://dev.mysql.com/downloads/workbench/" target="_blank">dev.mysql.com/downloads/workbench/</a> y descarga la versión gratuita.</li>
+                        <li>Sigue las instrucciones del asistente de instalación.</li>
+                        <li>Abre MySQL Workbench. En la pantalla principal verás un apartado llamado <em>MySQL Connections</em>.</li>
+                        <li>Haz clic en el ícono de suma (<strong>+</strong>) para agregar una conexión:
+                            <ul>
+                                <li><strong>Connection Name:</strong> Localhost XAMPP</li>
+                                <li><strong>Hostname:</strong> 127.0.0.1</li>
+                                <li><strong>Port:</strong> 3306</li>
+                                <li><strong>Username:</strong> root</li>
+                                <li><strong>Password:</strong> (Déjalo vacío por defecto si usas XAMPP)</li>
+                            </ul>
+                        </li>
+                        <li>Haz clic en <strong>Test Connection</strong> y luego en <strong>OK</strong>. ¡Ya estás listo para crear tu primera base de datos!</li>
+                    </ol>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Hecho por Elías Kuschill Saludos profe Bouzon lo aprecio</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll(".copiar").forEach(function(boton) {
+            boton.addEventListener("click", function() {
+                const texto = boton.getAttribute("data-copy");
+
+                navigator.clipboard.writeText(texto).then(function() {
+                    const textoOriginal = boton.textContent;
+                    boton.textContent = "¡Copiado!";
+
+                    setTimeout(function() {
+                        boton.textContent = textoOriginal;
+                    }, 1200);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
